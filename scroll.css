@@ -1,0 +1,238 @@
+:root{
+    --greywhite:rgb(238, 238, 238);
+    --greyblack:#796f6f;
+    --red:#ff0101;
+    --black:#1f1d1d;
+    --rgbgrey:rgb(37, 38, 44);
+    --navyblue:rgba(4, 4, 20, 0.877);
+    --white:#fff;
+    --blue:rgb(35, 35, 243);
+    --whiteshgrey:  rgba(238, 238, 238, 0.65);
+    --green: rgb(13, 116, 13);
+    --grey:hsla(0, 0%, 100%, 0.788);
+    --transition: all 0.3s linear;
+}
+*, ::after, ::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+@font-face {
+    font-family: myfont;
+    src: url(Jacquard_24/Jacquard24-Regular.ttf);
+}
+header{
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.nav-fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color:var(--greywhite);
+    box-shadow: 5px var(--white);
+    transition: var(--transition);
+}
+.nav-header{
+    background-color:var(--greywhite);
+    box-shadow: 5px var(--white);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+}
+h3{
+   margin-left: 40px; 
+   font-family: myfont;
+   font-size: 45px;
+   color: var(--green);
+}
+h3 span{
+    font-size: 60px;
+    font-style: italic;
+    color: var(--red);
+}
+
+#nav .menu{
+    border: none;
+    margin-right: 40px;
+    background: none;
+    cursor: pointer;
+}
+#nav .menu:hover{
+    border: 1px solid var(--blue);
+}
+a, li{
+    text-decoration: none;
+    color: black;
+    list-style: none;
+}
+.links-container{
+    width: 100%;
+    background-color: var(--whiteshgrey);
+    height: 0;
+    overflow: hidden;
+   
+}
+.links a{
+    width: 100%;
+    display: block;
+    align-items: center;
+    text-transform: capitalize;
+    letter-spacing: .5px;
+    font-weight: bold;
+    padding: 0.75em 0;
+    font-size: 1.4em;
+    margin-left: 45px;
+
+}
+li a:hover{
+    color: var(--greyblack);
+}
+.banner{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.banner h3{
+    font-size: 80px;
+}
+.banner h3 span{
+    font-size: 100px;
+}
+.desc{
+    width: 500px;
+    text-align: center;
+    color: var(--rgbgrey);
+    font-size: large;
+    margin-bottom: 20px;
+}
+.banner button{
+    background: transparent;
+    color:  var(--rgbgrey);
+    width: 190px;
+    height: 25px;
+    border: 2px solid  var(--rgbgrey);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: large;
+    cursor: pointer;
+}
+.banner button:hover{
+    background-color: var(--black);
+    border: 2px solid  var(--greyblack);
+    color: var(--white);
+
+}
+section{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--white);
+}
+section:nt{
+    background-color: var(--grey);
+}
+section h2{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    color: #463c3c;
+}
+.title h2 span{
+    margin-left: 10px;
+    color: rgb(107, 247, 177);
+}
+footer{
+    width: 100%;
+    min-height: 130px;
+    background-color:var(--navyblue);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#section p{
+    font-size: 1.1em;
+    text-transform: capitalize;
+   width: 270px;
+}
+.scroll-btn{
+background-color: var(--blue);
+width:2rem;
+height: 2rem;
+border-radius: .5em;
+border: none;
+display: grid;
+place-items: center;
+animation: bounce 2s ease-in-out .5s infinite;
+position: fixed;
+bottom: 3rem;
+right: 3rem;
+visibility: hidden;
+z-index: -100;
+}
+.show-scrollbtn{
+    visibility: visible;
+    z-index: 100; 
+}
+@keyframes bounce{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.3);  
+    }
+}
+@media screen and (min-width:800px){
+    .nav-header,.links-container{
+        background: transparent;
+        padding: 0;
+    }
+    #nav .menu{
+        display: none
+    } 
+    .nav-center{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: var(--transition);
+        width: 90vw;
+    }
+    .links{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    .links-container{
+        height: auto !important;
+    }
+    .links a{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        text-transform: capitalize;
+        letter-spacing: .5px;
+        font-weight: bold;
+        font-size: 1.5em;
+        color: #a5a05a;
+        margin: 0;
+        
+    
+    }
+}

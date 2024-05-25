@@ -1,0 +1,124 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    background-color: rgb(242, 254, 255);
+    
+}
+.container{
+    margin-top: 150px;
+    height: auto;
+    width: clamp(600px, 900px, 1000px);
+    border: 2px solid rgba(0, 0, 0, 0.089);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 15px 10px 15px;
+    background-color: #fff;
+
+}
+.alert{
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+}
+.heading{
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    margin-bottom: 10px;
+    
+}
+.input-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+input, #submit-btn{
+    width: 85%;
+    height: auto;
+    padding: 2px;
+    padding-left: 15px;
+    border: none;
+    background-color: #edecf7;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+#submit-btn{
+    width: 10%;
+    background-color: #79d0f3;
+    padding: 0;
+    text-align: center;
+    text-transform: capitalize;
+    border-top-right-radius: .3em;
+    border-bottom-right-radius: .3em;
+    font-size: medium;
+    cursor: pointer;
+}
+.submit-btn:hover{
+    color: #fff;
+}
+.list{
+    width: 100%;
+}
+.items{
+    width: 90%;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.item{
+    font-size: 20px;
+    text-transform: capitalize;
+    width: 80%;
+}
+.btns{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.btns:hover{
+    border: .5px solid;
+}
+.clear-btn{
+    width: 100%;
+    background-color: transparent;
+    color:#0a0303f1;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 20px;
+    border: none;
+    visibility: hidden;
+    cursor:pointer;
+}
+.clear-btn:hover{
+    color: #f7270c;
+}
+.hidden{
+    display: none;
+}
+.visible{
+    visibility: visible;
+}
+.danger{
+    background-color: rgba(245, 37, 9, 0.1);
+    color: #f7270c;
+}
+.success{
+    background-color: rgba(9, 247, 48, 0.1);
+    color: green;
+}

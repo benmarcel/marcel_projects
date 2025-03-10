@@ -1,0 +1,295 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+
+:root {
+  --primaryColor: #f09d51;
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all 0.3s linear;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: var(--mainTransition);
+}
+body {
+  color: var(--mainBlack);
+  background: var(--mainWhite);
+  font-family: "Lato", sans-serif;
+}
+nav{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10% 0px 10%;
+    background-color: rgb(240, 236, 232);
+    position: sticky;
+}
+.nav-bar{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.menu{
+    cursor: pointer;
+}
+.cart-item-cont{
+    position: relative;
+    left: 15px;
+    bottom: -10px;
+    background-color: var(--primaryColor);
+    color: var(--mainWhite);
+    border: none ;
+    border-radius: 0.3em;
+    width: auto;
+    height: auto;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+.cart-icon{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+header{
+    
+   min-height: calc(100vh - 60px) ; 
+    background: url(images/hero-bcg.jpeg)  center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 40px;
+    padding: 2rem;
+    background-color: rgba(236, 236, 236, 0.8);
+}
+.banner h2{
+    text-transform: uppercase;
+    text-align: center;
+    font-size:3.4rem ;
+    font-weight: bolder;
+    letter-spacing: var(--mainSpacing);
+    
+}
+.banner-btn{
+    letter-spacing: var(--mainSpacing);
+    text-align: center;
+    text-transform: uppercase;
+    padding: 1.2rem 4rem;
+    background-color: var(--primaryColor);
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.banner-btn:hover{
+    background-color:  transparent;
+    color: var(--primaryColor);
+    border: 1px solid var(--primaryColor);
+}
+.section-title{
+    text-align: center;
+    text-transform: capitalize;
+    margin-top:80px ;
+    margin-bottom: 80px;
+    font-size: 30px;
+    letter-spacing: var(--mainSpacing);
+}
+.products-center {
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
+  }
+.img-container {
+    position: relative;
+    overflow: hidden;
+    transition: var(--mainTransition);
+}
+.product img{
+    width: 100%;
+    min-height: 12rem;
+    transition: var(--mainTransition);
+}
+.img-container:hover img{
+    opacity: 0.5;
+}
+
+
+.product :is(h3, h4){
+    letter-spacing: var(--mainSpacing);
+    text-transform: capitalize;
+    text-align: center;
+    margin-top: 1rem;
+}
+.product h4{
+    color: var(--primaryColor);
+    margin-top: 0.7rem;
+}
+.bag-btn{
+    position: absolute;
+    top: 70%;
+    right: 0;
+    transform: translateX(101%);
+    background-color: var(--primaryColor);
+    text-transform: uppercase;
+    padding: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    letter-spacing: var(--mainSpacing);
+    transition: var(--mainTransition);
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+}
+.img-container:hover .bag-btn{
+    transform: translateX(0%);
+    
+}
+.bag-btn:hover svg{
+    fill:#fff
+}
+.bag-btn:hover{
+    color: #fff;
+}
+.cart-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color:  rgb(240, 157, 81, 0.5);
+    visibility: hidden;
+}
+.show-shadow{
+    visibility: visible;
+}
+.close-cart{
+    background-color: #222;
+    border: none;
+    border-radius: 0.5rem;
+    transition: var(--mainTransition);
+}
+.close-cart:hover{
+    background-color: transparent;
+    border: 1px solid;
+}
+.close-cart svg{
+    fill: #ececec;
+    transition: var(--mainTransition);
+}
+.close-cart:hover svg{
+    fill: #222;
+}
+.cart{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: var(--mainGrey);
+    padding: 15px;
+    letter-spacing: var(--mainSpacing);  
+    text-transform: capitalize;
+    z-index: 99;
+    overflow: scroll;
+    transition: var(--mainTransition);
+    display: none;
+
+}
+.show-cart{
+    display: block;
+}
+.cart h2{
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.cart-footer h3{
+    text-align: center;
+    margin-top: 20px;
+    
+}
+.cart-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+.cart-item{
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr auto;
+    grid-column-gap: 1rem;
+    margin: 1.5rem 0;
+
+}
+.cart-content img{
+    width: 75px;
+    height:75px;
+}
+.cart-item :is(h4, h5){
+    letter-spacing: var(--mainSpacing);
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.cart-item div:nth-of-type(2){
+   display: grid;
+   align-items: center;
+   grid-template-columns: 1fr 1fr 1fr;
+   margin-left: 7rem;
+   
+}
+.cart-item div:nth-of-type(2) svg{
+   padding: 0;
+   margin: 0;
+    cursor: pointer; 
+    transition: var(--mainTransition); 
+}
+.cart-item div:nth-of-type(2) svg:hover{
+    fill: var(--primaryColor);
+}
+.remove-item{
+    text-transform: lowercase;
+    color: #514545;
+    margin-top: 10px;
+    cursor: pointer
+}
+.remove-item:hover{
+    color: var(--primaryColor);
+}
+
+@media screen and (min-width:768px) {
+    .cart{
+        width: 30vw;
+        min-width: 450px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: var(--mainGrey);
+        padding: 15px;
+        letter-spacing: var(--mainSpacing);  
+        text-transform: capitalize;
+        z-index: 99;
+    }
+}
